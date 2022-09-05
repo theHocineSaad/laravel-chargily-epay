@@ -1,0 +1,54 @@
+{
+    "name": "thehocinesaad/laravel-chargily-epay",
+    "description": "Laravel-Chargily-ePay is a Laravel package that provides an easy interface to Chargily ePay gateway",
+    "keywords": [
+        "thehocinesaad",
+        "laravel-chargily-epay"
+    ],
+    "homepage": "https://github.com/thehocinesaad/laravel-chargily-epay",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Hocine Saad",
+            "email": "theHocineSaad@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.4|^8.0",
+        "illuminate/support": "^8.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.0",
+        "phpunit/phpunit": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "TheHocineSaad\\LaravelChargilyEPay\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "TheHocineSaad\\LaravelChargilyEPay\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "TheHocineSaad\\LaravelChargilyEPay\\LaravelChargilyEPayServiceProvider"
+            ],
+            "aliases": {
+                "LaravelChargilyEPay": "TheHocineSaad\\LaravelChargilyEPay\\LaravelChargilyEPayFacade"
+            }
+        }
+    }
+}
