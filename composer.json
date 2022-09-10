@@ -3,7 +3,17 @@
     "description": "Laravel-Chargily-ePay is a Laravel package that provides an easy interface to Chargily ePay gateway",
     "keywords": [
         "thehocinesaad",
-        "laravel-chargily-epay"
+        "laravel-chargily-epay",
+        "Chargily-ePay-Gateway",
+        "epay",
+        "epaiment",
+        "epay.chargily.com.dz",
+        "chargily",
+        "satim",
+        "cib",
+        "cibweb",
+        "php", 
+        "edahabia"
     ],
     "homepage": "https://github.com/thehocinesaad/laravel-chargily-epay",
     "license": "MIT",
