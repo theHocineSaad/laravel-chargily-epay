@@ -15,14 +15,22 @@ class LaravelChargilyEPayServiceProvider extends ServiceProvider
          * Optional methods to load your package assets
          */
         // $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'laravel-chargily-epay');
-        // $this->loadViewsFrom(__DIR__.'/../resources/views', 'laravel-chargily-epay');
-        // $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
-        // $this->loadRoutesFrom(__DIR__.'/routes.php');
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'laravel-chargily-epay');
+        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
+        $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
 
         if ($this->app->runningInConsole()) {
             $this->publishes([
                 __DIR__.'/../config/config.php' => config_path('laravel-chargily-epay.php'),
             ], 'config');
+
+            $this->publishes([
+                __DIR__.'/../database/migrations' => database_path('migrations'),
+            ], 'migrations');
+
+            $this->publishes([
+                __DIR__.'/Models' => app_path('models'),
+            ], 'models');
 
             // Publishing the views.
             /*$this->publishes([
@@ -51,10 +59,5 @@ class LaravelChargilyEPayServiceProvider extends ServiceProvider
     {
         // Automatically apply the package configuration
         $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'laravel-chargily-epay');
-
-        // Register the main class to use with the facade
-        $this->app->singleton('laravel-chargily-epay', function () {
-            return new LaravelChargilyEPay;
-        });
     }
 }

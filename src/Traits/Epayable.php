@@ -1,0 +1,27 @@
+<?php
+
+namespace TheHocineSaad\LaravelChargilyEPay\Traits;
+
+use TheHocineSaad\LaravelChargilyEPay\Models\Epay_Invoice;
+
+trait Epayable
+{
+    public function invoices()
+    {
+        return $this->hasMany(Epay_Invoice::class);
+    }
+
+    public function charge(array $configurations)
+    {
+        $configurations['payment'] = [
+            'client_name' => $this->name, // Client name
+            'client_email' => $this->email, // This is where client receive payment receipt after confirmation
+        ] + $configurations['payment'];
+
+        $configurations = $configurations + ['user_id' => $this->id];
+
+        $redirectUrl = Epay_Invoice::make($configurations);
+
+        return $redirectUrl;
+    }
+}
