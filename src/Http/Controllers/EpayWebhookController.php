@@ -9,8 +9,8 @@ class EpayWebhookController
 {
     public function test()
     {
-        if (!app()->environment('local')) {
-             abort(403);         
+        if (! app()->environment('local')) {
+            abort(403);
         }
 
         return view('laravel-chargily-epay::epay_webhook.test');
@@ -18,8 +18,8 @@ class EpayWebhookController
 
     public function test_store(Request $request)
     {
-        if (!app()->environment('local')) {
-             abort(403);         
+        if (! app()->environment('local')) {
+            abort(403);
         }
 
         $body_content = [
