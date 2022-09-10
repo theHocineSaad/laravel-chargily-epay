@@ -18,7 +18,7 @@
 ### Step 2: Run migration
     php artisan migrate
 
-### Edit `.env` file
+### Step 3: Edit `.env` file
 This package requires these keys:
 - **CHARGILY_EPAY_KEY**: You can get it from [Chargily Epay's dashboard](https://epay.chargily.com.dz/secure/admin/epay-api "Chargily Epay's dashboard").
 - **CHARGILY_EPAY_SECRET**: same as the first one.
@@ -29,7 +29,7 @@ This package requires these keys:
 
 **Important**: `CHARGILY_EPAY_BACK_URL` and `CHARGILY_EPAY_WEBHOOK_URL` should be real URLs, so you can't put `http://127.0.0.1:8000`, use [Ngrok](https://ngrok.com/ "Ngrok").
 
-### Step 3: Epayable trait
+### Step 4: Epayable trait
 Add the `Epayable` trait to your User model:
 
 ```php
@@ -41,7 +41,7 @@ class User extends Authenticatable
 }
 ```
 
-### Step 4 (optional): Publishing
+### Step 5 (optional): Publishing
 ####Migration: 
 
     php artisan vendor:publish --provider="TheHocineSaad\LaravelChargilyEPay\LaravelChargilyEPayServiceProvider" --tag="migrations"
