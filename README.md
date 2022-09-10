@@ -163,4 +163,4 @@ This Laravel package is built on top of [this PHP package](https://github.com/Ch
 If you discover any security related issues, please email theHocineSaad@gmail.com instead of using the issue tracker.
 
 ## License
-Laravel-Chargily-ePay project is open-sourced software licensed under the MIT license license.
+Laravel-Chargily-ePay project is open-sourced software licensed under the [MIT license](https://github.com/theHocineSaad/laravel-chargily-epay/blob/main/LICENSE.md "MIT license").
