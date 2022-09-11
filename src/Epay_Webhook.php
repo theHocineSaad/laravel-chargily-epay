@@ -18,7 +18,6 @@ class Epay_Webhook
     public function handleWebhook()
     {
         $chargily = new Chargily([
-            //credentials
             'api_key' => config('laravel-chargily-epay.key'),
             'api_secret' => config('laravel-chargily-epay.secret'),
         ]);
@@ -33,7 +32,6 @@ class Epay_Webhook
             } elseif ($response['invoice']['status'] === 'failed') {
                 $this->invoiceIsPaied = false;
             }
-            // exit('OK');
         }
     }
 }

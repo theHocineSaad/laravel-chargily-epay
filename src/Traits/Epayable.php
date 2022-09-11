@@ -14,8 +14,8 @@ trait Epayable
     public function charge(array $configurations)
     {
         $configurations['payment'] = [
-            'client_name' => $this->name, // Client name
-            'client_email' => $this->email, // This is where client receive payment receipt after confirmation
+            'client_name' => $this->name,
+            'client_email' => $this->email,
         ] + $configurations['payment'];
 
         $configurations = $configurations + ['user_id' => $this->id];

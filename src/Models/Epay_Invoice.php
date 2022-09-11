@@ -16,11 +16,9 @@ class Epay_Invoice extends Model
     public static function make(array $configurations)
     {
         $configurations = [
-            //credentials
             'api_key' => config('laravel-chargily-epay.key'),
             'api_secret' => config('laravel-chargily-epay.secret'),
 
-            //urls
             'urls' => [
                 'back_url' => config('laravel-chargily-epay.back_url'), // this is where client redirected after payment processing
                 'webhook_url' => config('laravel-chargily-epay.webhook_url'), // this is where you receive payment informations
