@@ -198,7 +198,7 @@
         </div>
         @endif
 
-        <form action="{{ route('epaywebhook.post') }}" method="post" class="form mainForm">
+        <form action="{{ route('epay_webhook_tester.post') }}" method="post" class="form mainForm">
             @csrf
             <div class="form__field">
                 <input type="text" name="invoice_id" class="form__input" placeholder="Invoice ID"
