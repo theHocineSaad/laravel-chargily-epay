@@ -4,12 +4,13 @@ namespace TheHocineSaad\LaravelChargilyEPay\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\App;
 
 class EpayWebhookController
 {
     public function test()
     {
-        if (! app()->environment('local')) {
+        if (! App::environment(['local', 'testing'])) {
             abort(403);
         }
 
@@ -18,7 +19,7 @@ class EpayWebhookController
 
     public function test_store(Request $request)
     {
-        if (! app()->environment('local')) {
+        if (! App::environment(['local', 'testing'])) {
             abort(403);
         }
 
