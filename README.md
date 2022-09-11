@@ -42,11 +42,11 @@ class User extends Authenticatable
 ```
 
 ### Step 5 (optional): Publishing
-####Migration: 
+#### Migration: 
 
     php artisan vendor:publish --provider="TheHocineSaad\LaravelChargilyEPay\LaravelChargilyEPayServiceProvider" --tag="migrations"
 
-####Models
+#### Models
 
     php artisan vendor:publish --provider="TheHocineSaad\LaravelChargilyEPay\LaravelChargilyEPayServiceProvider" --tag="models"
 
