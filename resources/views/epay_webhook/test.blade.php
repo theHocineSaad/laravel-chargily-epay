@@ -8,10 +8,6 @@
     <title>Epay Webhook Tester</title>
 
     <style>
-        /* config.css */
-
-        /* helpers/align.css */
-
         .align {
             -webkit-box-align: center;
             -ms-flex-align: center;
@@ -28,8 +24,6 @@
             justify-content: center;
         }
 
-        /* helpers/grid.css */
-
         .grid {
             margin-left: auto;
             margin-right: auto;
@@ -37,8 +31,6 @@
             max-width: 20rem;
             width: 90%;
         }
-
-        /* helpers/hidden.css */
 
         .hidden {
             border: 0;
@@ -50,8 +42,6 @@
             position: absolute;
             width: 1px;
         }
-
-        /* helpers/icon.css */
 
         .icons {
             display: none;
@@ -66,8 +56,6 @@
             vertical-align: middle;
             width: 1em;
         }
-
-        /* layout/base.css */
 
         * {
             -webkit-box-sizing: inherit;
@@ -94,8 +82,6 @@
             min-height: 100vh;
         }
 
-        /* modules/anchor.css */
-
         a {
             color: #eee;
             outline: 0;
@@ -106,8 +92,6 @@
         a:hover {
             text-decoration: underline;
         }
-
-        /* modules/form.css */
 
         input {
             background-image: none;
@@ -202,10 +186,11 @@
             word-break: break-word;
         }
     </style>
+</head>
 
 <body class="align">
     <div class="grid">
-        
+
         @if (session('paid_invoice'))
         <div class='success'>
             <h4>Successfully simulated payment of invoice number: {{ session('paid_invoice') }}</h4>
@@ -222,8 +207,7 @@
                 <input type="submit" class="payBtn" value="Pay">
             </div>
         </form>
-</body>
-
+    </div>
 </body>
 
 </html>
