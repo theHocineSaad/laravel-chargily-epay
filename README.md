@@ -76,6 +76,13 @@ $configurations = [
 ```
 The `Make()` function returns the checkout URL, where the user should be redirected to make a payment, If any error occurs, it will return to the home page, so make sure to check this before redirecting the user.
 
+The `Make()` also creates an invoice in your database using the info from the provided **$configurations** array, so if you added columns to the migration file of the invoices table that comes with the package, you have to add the corresponding values as a second array, example:
+
+```php
+    $checkout_url = Epay_Invoice::make($configurations, ['product_id' => 1]);
+```
+As you saw in the example above, we added the value of `product_id`, that's because you may be added `product_id` field in the migration file.
+
 ### Creating an Epay Invoice for a User
 The other way (Recommended way) to create Epay Invoices is to use the `charge()` custom model method which is provided by the `Epayable` trait, this method will automatically add the name of the client, the email of the client, and the `client_id` foreign key:
 ```php
@@ -91,6 +98,8 @@ $configurations = [
 $checkout_url = $request->user()->charge($configurations);
 ```
 The `charge()` method calls the `Make()` static function at a certain point, so they act the same way, it returns the checkout URL, or the home page URL if any error occurs.
+
+Just like the `Make()` function, you can add a second array to pass any added columns to the `invoices` table.
 
 ### Payment Webhook
 After a user complete the payment of an invoice, Chargily ePay will notify you by sending a post request to your Webhook, so you can handle the things you would like to happen after a successful or a failed payment.
