@@ -13,7 +13,7 @@ class Epay_Invoice extends Model
 
     protected $guarded = [];
 
-    public static function make(array $configurations)
+    public static function make(array $configurations, $otherInvoiceFields = [])
     {
         $configurations = [
             'api_key' => config('laravel-chargily-epay.key'),
@@ -45,6 +45,7 @@ class Epay_Invoice extends Model
                 'back_url' => $configurations['urls']['back_url'],
                 'checkout_url' => $checkout_url,
                 'user_id' => $configurations['user_id'] ?? null,
+                ...$otherInvoiceFields
             ]);
 
             return $checkout_url;

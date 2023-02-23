@@ -11,7 +11,7 @@ trait Epayable
         return $this->hasMany(Epay_Invoice::class);
     }
 
-    public function charge(array $configurations)
+    public function charge(array $configurations, $otherInvoiceFields = [])
     {
         $configurations['payment'] = [
             'client_name' => $this->name,
@@ -20,7 +20,7 @@ trait Epayable
 
         $configurations = $configurations + ['user_id' => $this->id];
 
-        $redirectUrl = Epay_Invoice::make($configurations);
+        $redirectUrl = Epay_Invoice::make($configurations, $otherInvoiceFields);
 
         return $redirectUrl;
     }
