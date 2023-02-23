@@ -42,6 +42,10 @@ class User extends Authenticatable
 ```
 
 ### Step 5 (optional): Publishing
+#### Config File: 
+
+    php artisan vendor:publish --provider="JohnDoe\BlogPackage\BlogPackageServiceProvider" --tag="config"
+
 #### Migration: 
 
     php artisan vendor:publish --provider="TheHocineSaad\LaravelChargilyEPay\LaravelChargilyEPayServiceProvider" --tag="migrations"
