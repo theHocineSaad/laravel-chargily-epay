@@ -15,10 +15,13 @@
 ### Step 1 - Require the package
     composer require thehocinesaad/laravel-chargily-epay
 
-### Step 2: Run migration
+### Step 2: Publish migrations
+	php artisan vendor:publish --provider="TheHocineSaad\LaravelChargilyEPay\LaravelChargilyEPayServiceProvider" --tag="migrations"
+
+### Step 3: Run migrations
     php artisan migrate
 
-### Step 3: Edit `.env` file
+### Step 4: Edit `.env` file
 This package requires these keys:
 - **CHARGILY_EPAY_KEY**: You can get it from [Chargily Epay's dashboard](https://epay.chargily.com.dz/secure/admin/epay-api "Chargily Epay's dashboard").
 - **CHARGILY_EPAY_SECRET**: same as the first one.
@@ -29,7 +32,7 @@ This package requires these keys:
 
 **Important**: `CHARGILY_EPAY_BACK_URL` and `CHARGILY_EPAY_WEBHOOK_URL` should be real URLs, so you can't put `http://127.0.0.1:8000`, use [Ngrok](https://ngrok.com/ "Ngrok").
 
-### Step 4: Epayable trait
+### Step 5: Epayable trait
 Add the `Epayable` trait to your User model:
 
 ```php
@@ -41,14 +44,10 @@ class User extends Authenticatable
 }
 ```
 
-### Step 5 (optional): Publishing
+### Step 6 (optional): Publishing
 #### Config File: 
 
     php artisan vendor:publish --provider="JohnDoe\BlogPackage\BlogPackageServiceProvider" --tag="config"
-
-#### Migration: 
-
-    php artisan vendor:publish --provider="TheHocineSaad\LaravelChargilyEPay\LaravelChargilyEPayServiceProvider" --tag="migrations"
 
 #### Models
 
