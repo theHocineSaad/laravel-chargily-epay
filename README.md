@@ -1,10 +1,10 @@
-<p align="center"><img src="https://i.imgur.com/j3fZ4yK.png"></p>
+<p align="center"><img src="https://i.imgur.com/Do3DpYI.png"></p>
 <h1 align="center">Laravel-Chargily-ePay</h1>
 
-**Laravel-Chargily-ePay** is a Laravel package that provides an easy interface to [Chargily ePay gateway](https://epay.chargily.com.dz/ "Chargily ePay gateway").
+**Laravel-Chargily-ePay** is a Laravel package that provides an easy interface to [Chargily Pay gateway](http://pay.chargily.com/ "Chargily Pay gateway").
 
 ## Features
-- Integrating ePayment never was that fast and easy.
+- Integrating E-Payment never was that fast and easy.
 - Creating invoices is as easy as calling a function.
 - Comes with a Migration that creates `epay_invoices` table with a `user_id` foreign id.
 - A trait for the User model that gives you some very useful functions like `$user->charge()` to create an invoice for a user, and `$user->invoices()` to get all user's invoices.
@@ -23,7 +23,7 @@
 
 ### Step 4: Edit `.env` file
 This package requires these keys:
-- **CHARGILY_EPAY_KEY**: You can get it from [Chargily Epay's dashboard](https://epay.chargily.com.dz/secure/admin/epay-api "Chargily Epay's dashboard").
+- **CHARGILY_EPAY_KEY**: You can get it from [Chargily Pay's dashboard](https://pay.chargily.com/secure/admin/epay-api "Chargily Pay's dashboard").
 - **CHARGILY_EPAY_SECRET**: same as the first one.
 
 - **CHARGILY_EPAY_BACK_URL**: This is the URL where the user will be redirected after payment processing.
@@ -128,7 +128,7 @@ if($webhookHandler -> invoiceIsPaied) {
 ```
 **Note**: You can access the ID of the Invoice by: `$webhookHandler -> invoice['invoice_number']`
 
-Here is an example of the data that comes with the post request from Chargily ePay:
+Here is an example of the data that comes with the post request from Chargily Pay:
 ```json
 {
    "invoice":{
@@ -166,7 +166,7 @@ Example:
 
 **Note: **for security purposes, this feature works only on the local environment (`APP_ENV=local`), and am sure it's not needed in production.
 
-![Test Chargily ePay](https://i.imgur.com/k2yaVSt.png)
+![Test Chargily Pay](https://i.imgur.com/k2yaVSt.png)
 
 ## Info
 This Laravel package is built on top of [this PHP package](https://github.com/Chargily/chargily-epay-php "this PHP package"), so have a look at it to know more about what's happening under the hood.
